@@ -1,0 +1,18 @@
+eksperimen dilakukan dengan dua cara yang berbeda, pertama untuk mendapatkan dan memperoleh model prediksi yang optimal lalu menentukan secara spesifik faktor paling penting yang mempengaruhi akurasi prediksi seperti skill apa yang harus dibutuhkan.
+
+enam percobaan dilakukan untuk memprediksi peforma pada enam protokol CMJF CMJH SP10 SP20 dan SR. semua data dinormalisasi
+
+20 80 rasio digunakan. all atributes(measurements) except the target exercise protocol were included in  the training set to predict the observed skill. was used hyperparameter tuning for each model to minimize computational cost. Validation tidak dilakukan saat training untuk mengurangi jumlah instance pada dataset 0.09 20 clusters and 6000 max iter
+
+R2 Score, MSE and MAE pada jurnal (..) dianggap hasil akhir. Evaluasi menggunakan tiga metrik tersebut yang merupakan main indicator evaluasi model pada prediksi.
+
+R2 score merupakan teknik statistical yang digunakan untuk evaluasi hubungan antara data yang diprediksi dengan yang di observasi menggunakan variance(perbedaan)
+dengan rumus:
+
+MSE adalah rata-rata error kuadrat yang didapatkan dari perbedaan nilai observasi dan prediksi. MAE adalah mean absolute error yang dapat dihitungan dengan rumus: perbedaan antara data yang diamati dan diprediksi
+
+Umumnya model dengan nilai R2 tinggi dan MSE dan MAE rendah merupakan model yang efektif untuk mendapatkan kemampuan prediksi terbaik
+
+In the radial-basis
+function neural network, the learning rate was set to 0.09, and 20 clusters were used.
+
