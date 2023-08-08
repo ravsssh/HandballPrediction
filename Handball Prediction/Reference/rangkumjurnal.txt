@@ -16,3 +16,10 @@ Umumnya model dengan nilai R2 tinggi dan MSE dan MAE rendah merupakan model yang
 In the radial-basis
 function neural network, the learning rate was set to 0.09, and 20 clusters were used.
 
+
+membandingkan model rbfnn dengan model linear
+breakdown rbfnn gamma berapa yang terbaik
+elbow cluster, mencari nilai landai dari sebuah cluster
+bayesiab optimization
+melihat loss per epoch dan akurasi per epoch, regression metric
+saat training dan testting kalo jauh regularisasi drop
