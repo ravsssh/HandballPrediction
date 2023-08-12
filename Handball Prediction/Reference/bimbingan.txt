@@ -1,0 +1,8 @@
+membuat grafik(box plot) uji rbf center
+menjelaskan uji sensitivitas teratas untuk masing-masing posisi
+melakukan prediksi berdasarkan rata-rata, menjelaskan rbfnn
+standar deviasi dari data yang sudah di normalisasi 
+karena data sudah dinormalisasi maka nilai gamma tidak bisa lebih dari 1 
+mencari rata2 standar deviasi dari 12 kolom
+tidak perlu dibulatkan uji sensitivitas
+menentukan batas outlier dengan cara mencari rata2 tiap kolom lalu memilih nilai rata2 yang tinggi
