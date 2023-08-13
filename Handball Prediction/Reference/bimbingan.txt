@@ -6,3 +6,17 @@ karena data sudah dinormalisasi maka nilai gamma tidak bisa lebih dari 1
 mencari rata2 standar deviasi dari 12 kolom
 tidak perlu dibulatkan uji sensitivitas
 menentukan batas outlier dengan cara mencari rata2 tiap kolom lalu memilih nilai rata2 yang tinggi
+
+
+Pernyataan yang belum masuk/masukan
+kenapa harus memprediksi gol, apa hubungannya dengan pertandingan handball kenapa harus menggunakan parameter accuracy dan shot attempt
+pemahaman terhadap data seperti distribusi data bagaimana tiap kolom pada data berhubungan dengan nilai yang akan diprediksi
+
+
+
+pertanyaan
+cara mencari outlier mana yang dipilih? IQR/mean terhadap jenis shot yang paling tinggi meannya atau paling tinggi stdnya? IQR/mean terhadap total shot attempt.
+apakah perlu menghapus kolom yang semuanya bernilai nol sebelum mencari IQR
+apakah memang perlu menggunakan semua kolom pada dataset accuracy dan shot attempt tanpa melihat korelasi
+
+apakah harus melakukan normalisasi data?
