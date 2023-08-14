@@ -1,22 +1,37 @@
-membuat grafik(box plot) uji rbf center
-menjelaskan uji sensitivitas teratas untuk masing-masing posisi
-melakukan prediksi berdasarkan rata-rata, menjelaskan rbfnn
+To do list :
+Membuat model baru dengan outlier IQR/mean.
+membuat grafik(box plot) uji rbf center.
+melakukan uji sensitivitas berdasarkan nilai mean tiap fitur tidak perlu dibulatkan.
+menjelaskan uji sensitivitas teratas untuk masing-masing posisi.
+Membuat presentasi.
+Menyelesaikan laporan.
+Membuat visualisasi data streamlit.
+
+
+
+
+Masukan penulisan.
+pada pendahuluan tuliskan kenapa harus memprediksi gol, apa hubungannya dengan pertandingan handball kenapa harus menggunakan parameter accuracy dan shot attempt
+menurunkan accuracy untuk kiper mengetahui tembakan mana yang perlu ditepis karena akurasi merupakam sesuatu yg bisa dilakukan oleh seorang goalkeeper
+tembakan merupakam hal yang bisa dilakukan  oleh pemain berbeda drngan akurasi itu tergantung kiper
+menentukan kualitas permain berdasarkan jumlah gol, seperti prmain wing yg hebat merupakam yg hebat dalam tembakan
+
+
+Pertanyaan Sidang.
+pemahaman terhadap data seperti distribusi data bagaimana data relationnya apakah dia linear atau non linear.
+kenapa menggunakan semua kolom tersebut seperti 6 macam shot attempt atau 6 macam shot accuracy. 
+menjelaskan rbfnn
+apakah harus melakukan normalisasi data?
 standar deviasi dari data yang sudah di normalisasi 
 karena data sudah dinormalisasi maka nilai gamma tidak bisa lebih dari 1 
 mencari rata2 standar deviasi dari 12 kolom
-tidak perlu dibulatkan uji sensitivitas
-menentukan batas outlier dengan cara mencari rata2 tiap kolom lalu memilih nilai rata2 yang tinggi
+R2 Score, MSE and MAE pada jurnal (..) dianggap hasil akhir. Evaluasi menggunakan tiga metrik tersebut yang merupakan main indicator evaluasi model pada prediksi.
 
 
-Pernyataan yang belum masuk/masukan
-kenapa harus memprediksi gol, apa hubungannya dengan pertandingan handball kenapa harus menggunakan parameter accuracy dan shot attempt
-pemahaman terhadap data seperti distribusi data bagaimana tiap kolom pada data berhubungan dengan nilai yang akan diprediksi
-
-
-
-pertanyaan
+Pertanyaan untuk bimbingan
 cara mencari outlier mana yang dipilih? IQR/mean terhadap jenis shot yang paling tinggi meannya atau paling tinggi stdnya? IQR/mean terhadap total shot attempt.
-apakah perlu menghapus kolom yang semuanya bernilai nol sebelum mencari IQR
-apakah memang perlu menggunakan semua kolom pada dataset accuracy dan shot attempt tanpa melihat korelasi
+apakah perlu menghapus kolom yang semuanya bernilai nol sebelum mencari IQR? karena shot attempt nol pun berguna untuk melatih data terhadap pemain yang tidak mencetak gol.
 
-apakah harus melakukan normalisasi data?
+
+
+
