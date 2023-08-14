@@ -1,5 +1,5 @@
 To do list :
-Membuat model baru dengan outlier IQR/mean.
+Membuat model baru dengan outlier IQR/mean. sudah menggunakan IQR terhadap kolom shot attempt
 membuat grafik(box plot) uji rbf center.
 melakukan uji sensitivitas berdasarkan nilai mean tiap fitur tidak perlu dibulatkan.
 menjelaskan uji sensitivitas teratas untuk masing-masing posisi.
@@ -31,6 +31,83 @@ R2 Score, MSE and MAE pada jurnal (..) dianggap hasil akhir. Evaluasi menggunaka
 Pertanyaan untuk bimbingan
 cara mencari outlier mana yang dipilih? IQR/mean terhadap jenis shot yang paling tinggi meannya atau paling tinggi stdnya? IQR/mean terhadap total shot attempt.
 apakah perlu menghapus kolom yang semuanya bernilai nol sebelum mencari IQR? karena shot attempt nol pun berguna untuk melatih data terhadap pemain yang tidak mencetak gol.
+
+----code---------
+def training_modelacc(filename):
+    # Memuat dataset
+    df = pd.read_csv(filename, delimiter=',')
+    # Menentukan input(X) dan output (y)
+    X = df.drop(columns=["SHOT","GOAL","7MSHOT","6MSHOT","9MSHOT","WINGSHOT","PIVOTSHOT","FASTBREAKSHOT"])
+    y = df.GOAL
+    # Membagi dataset 80:20 untuk train dan test
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    # normalisasi dataset agar tidak bias
+    scaler = MinMaxScaler()
+    X_train = scaler.fit_transform(X_train)
+    X_test = scaler.transform(X_test)
+    # membuat model neural network
+    model = Sequential()
+    model.add(Flatten(input_shape=(6,)))  # input layer dimana jumlah neuron sesuai dengan input
+    model.add(RBFLayer(6, 0.5)) # hidden layer dimana rbf kernel dijalankan dengan neuron sebanyak input dan nilai gamma
+    model.add(Dense(1, activation='linear'))  # aktivasi secara linear
+    model.compile(optimizer='rmsprop', loss=mean_squared_error)  
+    # melatih model
+    history = model.fit(X_train, y_train, batch_size=8, epochs=100, validation_data = (X_test, y_test))
+    # Create a figure with two subplots
+    plt.figure(figsize=(16, 6))
+    plt.subplot()
+    plt.plot(history.history['loss'], label='Training Loss')
+    plt.plot(history.history['val_loss'], label='Validation Loss')
+    plt.title('Model Loss')
+    plt.xlabel('Epoch')
+    plt.ylabel('Loss')
+    plt.grid(True)
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
+    # model.save(f'modelakurasi_{os.path.splitext(os.path.basename(filename))[0]}')
+#     # data prediction
+#     pred_train = model.predict(X_train)
+#     pred_test = model.predict(X_test)
+    
+    return model
+def training_modelshot(filename):
+    # load data
+    df = pd.read_csv(filename, delimiter=',')
+    # input and output
+    X = df.drop(columns=["SHOT","GOAL","7MACC","6MACC","9MACC","WINGACC","PIVOTACC","FASTBREAKACC"])
+    y = df.GOAL
+    # dataset splitting
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    # dataset normalization
+    scaler = MinMaxScaler()
+    X_train = scaler.fit_transform(X_train)
+    X_test = scaler.transform(X_test)
+    # create the model
+    model = Sequential()
+    model.add(Flatten(input_shape=(6,)))  # input layer dimana jumlah neuron sesuai dengan input
+    model.add(RBFLayer(6, 0.5)) # hidden layer dimana rbf kernel dijalankan dengan neuron sebanyak input dan nilai gamma
+    model.add(Dense(1, activation='linear'))  # aktivasi secara linear
+    model.compile(optimizer='rmsprop', loss=mean_squared_error)  
+    # melatih model
+    history = model.fit(X_train, y_train, batch_size=8, epochs=100, validation_data = (X_test, y_test))
+    # Create a figure with two subplots
+    plt.figure(figsize=(16, 6))
+    plt.subplot()
+    plt.plot(history.history['loss'], label='Training Loss')
+    plt.plot(history.history['val_loss'], label='Validation Loss')
+    plt.title('Model Loss')
+    plt.xlabel('Epoch')
+    plt.ylabel('Loss')
+    plt.grid(True)
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
+    # data prediction
+#     pred_train = model.predict(X_train)
+#     pred_test = model.predict(X_test)
+    
+    return model
 
 
 
