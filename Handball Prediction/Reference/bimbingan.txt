@@ -1,7 +1,7 @@
 To do list :
 Membuat model baru dengan outlier IQR/mean. sudah menggunakan IQR terhadap kolom shot attempt
-membuat grafik(box plot) uji rbf center.
-melakukan uji sensitivitas berdasarkan nilai mean tiap fitur tidak perlu dibulatkan.
+membuat grafik(box plot) uji rbf center. sudah
+melakukan uji sensitivitas berdasarkan nilai mean tiap fitur tidak perlu dibulatkan. sudah
 menjelaskan uji sensitivitas teratas untuk masing-masing posisi.
 Membuat presentasi.
 Menyelesaikan laporan.
